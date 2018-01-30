@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>PORTAL de Viagem Inteligente!</title>
+        <meta name="keywords" content="" />s
+        <meta name="description" content="" />
+        <link href="../styles.css" rel="stylesheet" type="text/css" media="screen" />
+    </head>
+    <body>
+        <h:form>
+            <div id="main">
+                    <div id="inner">
+            <!-- header -->
+                            <div id="header">
+                                    <div id="logo">
+                                            <h1>Monte seu roteiro!</h1>
+                                            <h2>A viagem da descoberta consiste não em achar novas paisagens,</h2>
+                                            <h2>mas em ver com novos olhos. Marcel Proust</h2>
+                                    </div>
+                                    <div id="menu">
+                                            <ul>
+                                                    <li><a href="index.faces">Home</a></li>
+                                                    <li><a href="acomodacao.faces">Acomodações</a></li>
+                                                    <li><a href="hotel.faces">Hotel</a></li>
+                                                    <li><a href="#">Transporte</a></li>
+                                                    <li><a href="#">Contatos</a></li>
+                                            </ul>
+                                    </div>
+                            </div>
+            <!-- header -->
+            <!-- page -->
+                            <div id="page">
+            <!-- leftbar -->
+                                    <div id="leftbar" class="sidebar">
+                                            <h2>Categorias</h2>
+                                            <div class="back">
+                                                    <ul>
+                                                            <li><a href="index.faces">Home</a></li>
+                                                            <li><a href="acomodacao.faces">Acomodações</a></li>
+                                                            <li><a href="hotel.faces">Hotel</a></li>
+                                                            <li><a href="#">Transporte</a></li>
+                                                            <li><a href="#">Contatos</a></li>
+                                                    </ul>
+                                            </div>
+                                            <div class="bottom_small"></div>
+                                    </div>
+            <!-- / leftbar -->
+            <!-- content -->
+                                    <div id="content"><div class="inner_copy"><div class="inner_copy"> Need a website? <a href="http://www.websitetemplatesonline.com">Free website templates</a> by professional designers at WTO.</div></div>
+                                            <div class="post">
+                                                    <div class="top"></div>
+                                                    <div class="middle_back">
+                                                            <h2 class="title">Acomodações:</h2>
+                                                            <br />
+                                                            <div align="center">
+                                                                <rich:comboBox selectFirstOnUpdate="false"  defaultLabel="Enter some value" value="#{acomodacaoMB.acomodacao.nmAcomodacao}" id="comboAcomodacao" enableManualInput="false">
+                                                                    <f:selectItems value="#{acomodacaoMB.itensAcomodacao}" />
+                                                                    <a4j:support event="onselect" action="#{acomodacaoMB.buscarAcomodacao}" reRender="comboAcomodacao" />
+                                                                </rich:comboBox>                                                                
+                                                            </div>
+                                                            <br />
+                                                            <br />
+                                                            <br />
+                                                            <table height="2" align="center" cols="8">
+                                                                    <tr>
+                                                                        <td><h:selectBooleanCheckbox id="lv_sacada" value="#{acomodacaoMB.acomodacao.lvSacada}" disabled="true"/></td><td><h2>Sacada</h2></td>
+                                                                        <td><h:selectBooleanCheckbox id="lv_cozinha" value="#{acomodacaoMB.acomodacao.lvCozinha}" disabled="true"/></td><td><h2>Cozinha</h2></td>
+                                                                        <td><h:selectBooleanCheckbox id="lv_hidromassagem" value="#{acomodacaoMB.acomodacao.lvHidro}" disabled="true"/></td><td><h2>Hidromassagem</h2></td>
+                                                                        <td><h:selectBooleanCheckbox id="lv_kit_praia" value="#{acomodacaoMB.acomodacao.lvKitpraia}" disabled="true"/></td><td><h2>Kit Praia</h2></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><h:selectBooleanCheckbox id="lv_tv" value="#{acomodacaoMB.acomodacao.lvTv}" disabled="true"/></td><td><h2>TV</h2></td>
+                                                                        <td><h:selectBooleanCheckbox id="lv_cafe" value="#{acomodacaoMB.acomodacao.lvCafe}" disabled="true"/></td><td><h2>Cafe da Manhã</h2></td>
+                                                                        <td><h:selectBooleanCheckbox id="lv_sauna" value="#{acomodacaoMB.acomodacao.lvSauna}" disabled="true"/></td><td><h2>Sauna</h2></td>
+                                                                        <td><h:selectBooleanCheckbox id="lv_ar_condicionado" value="#{acomodacaoMB.acomodacao.lvArcondicionado}" disabled="true"/></td><td><h2>Ar Condicionado</h2></td>
+                                                                    </tr>
+                                                            </table>
+                                                            <br />
+                                                            <br />
+                                                            <br />
+                                                            <br />
+                                                            <div id="botoes">
+                                                            <ul>
+                                                                    <li><a href="#">Editar</a></li>
+                                                            </ul>
+                                                            </div>
+                                                    </div>
+                                            </div>
+                                    </div>
+            <!-- / content -->
+            <!-- rightbar -->
+                                    <div id="rightbar" class="sidebar">
+                                            <h2>univali</h2>
+                                            <div class="back" align="center">
+                                                    <a href="http://www.univali.br/"><input name="logo_univali" type="image" src="../images/univali_logo.gif" /></a>
+                                            </div>                                            
+                                            <div class="bottom_small"></div>
+                                            <h2>Calendar</h2>
+                                            <div class="back" align="center">
+                                                    <div id="calendar1">
+                                                            <table id="calendar2" summary="Calendar">
+                                                                    <caption>January 2008</caption>
+                                                                    <thead>
+                                                                            <tr><th abbr="Monday" scope="col" title="Monday">M</th><th abbr="Tuesday" scope="col" title="Tuesday">T</th><th abbr="Wednesday" scope="col" title="Wednesday">W</th><th abbr="Thursday" scope="col" title="Thursday">T</th><th abbr="Friday" scope="col" title="Friday">F</th><th abbr="Saturday" scope="col" title="Saturday">S</th><th abbr="Sunday" scope="col" title="Sunday">S</th></tr>
+                                                                    </thead>
+                                                                    <tfoot>
+                                                                            <tr><td abbr="Des" colspan="3" id="prev"><a href="#">&laquo; Des</a></td><td class="pad">&nbsp;</td><td abbr="Feb" colspan="3" id="next" class="pad"><a href="#">Feb &raquo;</a></td></tr>
+                                                                    </tfoot>
+                                                                    <tbody>
+                                                                            <tr><td colspan="2" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+                                                                            <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+                                                                            <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+                                                                            <tr><td>20</td><td id="now">21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+                                                                            <tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td class="pad" colspan="2">&nbsp;</td></tr>
+                                                                    </tbody>
+                                                            </table>
+                                                    </div>
+                                            </div>
+                                            <div class="bottom_small"></div>
+                                    </div>
+            <!-- / rightbar -->
+                                    <div style="clear:both"></div>
+                            </div>
+            <!-- / page -->
+                    </div>
+                    <div id="footer">
+                            <div class="fleft"><p>Copyright statement.</p></div>
+                            <div class="fright"><p>More <a href="http://www.websitetemplatesonline.com" title="WTO - website templates and Flash templates">Free Website Templates</a> at WTO</p></div><div class="fclear"></div>
+                            <p>Design by <a href="http://www.metamorphozis.com/" title="Free Web Templates">Free Web Templates</a></p>
+                    </div>
+            </div>
+        </h:form>
+</body>
+</html>

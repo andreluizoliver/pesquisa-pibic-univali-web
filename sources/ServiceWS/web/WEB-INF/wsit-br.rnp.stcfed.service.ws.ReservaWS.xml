@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="ReservaWSService" targetNamespace="http://ws.service.stcfed.rnp.br/" xmlns:tns="http://ws.service.stcfed.rnp.br/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:fi="http://java.sun.com/xml/ns/wsit/2006/09/policy/fastinfoset/service" xmlns:tcp="http://java.sun.com/xml/ns/wsit/2006/09/policy/soaptcp/service" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsrm="http://docs.oasis-open.org/ws-rx/wsrmp/200702" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sc="http://schemas.sun.com/2006/03/wss/server" xmlns:wspp="http://java.sun.com/xml/ns/wsit/policy" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat"
+ >
+    <message name="inserir"/>
+    <message name="inserirResponse"/>
+    <message name="editar"/>
+    <message name="editarResponse"/>
+    <message name="consultarPorId"/>
+    <message name="consultarPorIdResponse"/>
+    <message name="deletar"/>
+    <message name="deletarResponse"/>
+    <message name="consultarPorNome"/>
+    <message name="consultarPorNomeResponse"/>
+    <message name="selectAll"/>
+    <message name="selectAllResponse"/>
+    <portType name="ReservaWS">
+        <operation name="inserir">
+            <input message="tns:inserir"/>
+            <output message="tns:inserirResponse"/>
+        </operation>
+        <operation name="editar">
+            <input message="tns:editar"/>
+            <output message="tns:editarResponse"/>
+        </operation>
+        <operation name="consultarPorId">
+            <input message="tns:consultarPorId"/>
+            <output message="tns:consultarPorIdResponse"/>
+        </operation>
+        <operation name="deletar">
+            <input message="tns:deletar"/>
+            <output message="tns:deletarResponse"/>
+        </operation>
+        <operation name="consultarPorNome">
+            <input message="tns:consultarPorNome"/>
+            <output message="tns:consultarPorNomeResponse"/>
+        </operation>
+        <operation name="selectAll">
+            <input message="tns:selectAll"/>
+            <output message="tns:selectAllResponse"/>
+        </operation>
+    </portType>
+    <binding name="ReservaWSPortBinding" type="tns:ReservaWS">
+        <wsp:PolicyReference URI="#ReservaWSPortBindingPolicy"/>
+        <operation name="inserir">
+            <wsp:PolicyReference URI="#ReservaWSPortBinding_inserir_Policy"/>
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="editar">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="consultarPorId">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="deletar">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="consultarPorNome">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="selectAll">
+            <input></input>
+            <output></output>
+        </operation>
+    </binding>
+    <service name="ReservaWSService">
+        <port name="ReservaWSPort" binding="tns:ReservaWSPortBinding"/>
+    </service>
+    <wsp:Policy wsu:Id="ReservaWSPortBindingPolicy">
+        <wsp:ExactlyOne>
+            <wsp:All/>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="ReservaWSPortBinding_inserir_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <wsat:ATAssertion wsp:Optional="true"/>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</definitions>

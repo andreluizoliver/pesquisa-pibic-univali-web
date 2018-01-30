@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:richfaces="http://richfaces.ajax4jsf.org/rich"
+      xmlns:a4j="http://richfaces.org/a4j">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>PORTAL de Viagem Inteligente!</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link href="../styles.css" rel="stylesheet" type="text/css" media="screen" />
+    </head>
+<body>
+    <h:form>
+        <div id="main">
+                <div id="inner">
+        <!-- header -->
+                        <div id="header">
+                                <div id="logo">
+                                        <h1>Monte seu roteiro!</h1>
+                                        <h2>A viagem da descoberta consiste não em achar novas paisagens,</h2>
+                                        <h2>mas em ver com novos olhos. Marcel Proust</h2>
+                                </div>
+                                <div id="menu">
+                                        <ul>
+                                                <li><a href="index.faces">Home</a></li>
+                                                <li><a href="acomodacao.faces">Acomodações</a></li>
+                                                <li><a href="hotel.faces">Hotel</a></li>
+                                                <li><a href="#">Transporte</a></li>
+                                                <li><a href="#">Contatos</a></li>
+                                        </ul>
+                                </div>
+                        </div>
+        <!-- header -->
+        <!-- page -->
+                        <div id="page">
+        <!-- leftbar -->
+                                <div id="leftbar" class="sidebar">
+                                        <h2>Categorias</h2>
+                                        <div class="back">
+                                                <ul>
+                                                        <li><a href="index.faces">Home</a></li>
+                                                        <li><a href="acomodacao.faces">Acomodações</a></li>
+                                                        <li><a href="hotel.faces">Hotel</a></li>
+                                                        <li><a href="#">Transporte</a></li>
+                                                        <li><a href="#">Contatos</a></li>
+                                                </ul>
+                                        </div>
+                                        <div class="bottom_small"></div>
+                                </div>
+        <!-- / leftbar -->
+        <!-- content -->
+                                <div id="content"><div class="inner_copy"><div class="inner_copy"> Need a website? <a href="http://www.websitetemplatesonline.com">Free website templates</a> by professional designers at WTO.</div></div>
+                                        <div class="post">
+                                                <div class="top"></div>
+                                                <div class="middle_back">
+                                                        <rich:spacer />
+                                                        <rich:dataTable
+                                                            onRowMouseOver="this.style.backgroundColor='#F1F1F1'"
+                                                            onRowMouseOut="this.style.backgroundColor='#{a4jSkin.tableBackgroundColor}'"
+                                                            cellpadding="0" cellspacing="0"
+                                                            width="475" border="0" var="record" value="">
+
+                                                            <f:facet name="header">
+                                                                <rich:columnGroup>
+                                                                    <rich:column rowspan="2">
+                                                                        <rich:spacer />
+                                                                        <h:panelGroup id="picture1">
+                                                                            <h:graphicImage value="/images/hotel_nacional.jpg" id="pic1" style="border : 5px solid #E4EAEF"/>
+                                                                            <br/>
+                                                                            <rich:modalPanel id="panel1" width="350" height="440">
+                                                                                <f:facet name="header">
+                                                                                    <h:panelGroup>
+                                                                                        <h:outputText value="Hotel Nacional"></h:outputText>
+                                                                                    </h:panelGroup>
+                                                                                </f:facet>
+                                                                                <f:facet name="controls">
+                                                                                    <h:panelGroup>
+                                                                                        <h:graphicImage value="/images/botao_fechar.png" styleClass="hidelink" id="hidelink1"/>
+                                                                                        <rich:componentControl for="panel1" attachTo="hidelink1" operation="hide" event="onclick"/>
+                                                                                    </h:panelGroup>
+                                                                                </f:facet>
+                                                                                <img src="../images/tabela_tarifa01.PNG" width="325" height="325" alt="tebala_tarifa" style="vertical-align:middle"/>
+                                                                                <br/>
+                                                                                <br/>
+                                                                                <h:graphicImage value="/images/botao_voltar.gif" id="hidelink111" style="float:left;"/>
+                                                                                <rich:componentControl for="panel1" attachTo="hidelink111" operation="hide" event="onclick"/>
+                                                                                <rich:spacer />
+                                                                                <a href="login.faces">
+                                                                                    <h:graphicImage value="/images/botao_reserva.png" style="float:right;"/>
+                                                                                </a>
+                                                                            </rich:modalPanel>
+                                                                            <h:outputLink value="#" id="link1">
+                                                                                <h:graphicImage value="/images/botao_tarifa.png" styleClass="hidelink" id="hidelink11"/>
+                                                                                <rich:componentControl for="panel1" attachTo="link1" operation="show" event="onclick"/>
+                                                                            </h:outputLink>
+                                                                        </h:panelGroup>
+                                                                    </rich:column>
+                                                                    <rich:column rowspan="2">
+                                                                        <rich:spacer />
+                                                                        <h:panelGroup id="picture2">
+                                                                            <h:graphicImage value="/images/hotel_vs.jpg" id="pic2" style="border : 5px solid #E4EAEF"/>
+                                                                            <br/>
+                                                                            <rich:modalPanel id="panel2" width="350" height="440">
+                                                                                <f:facet name="header">
+                                                                                    <h:panelGroup>
+                                                                                        <h:outputText value="Hotel Nacional"></h:outputText>
+                                                                                    </h:panelGroup>
+                                                                                </f:facet>
+                                                                                <f:facet name="controls">
+                                                                                    <h:panelGroup>
+                                                                                        <h:graphicImage value="/images/botao_fechar.png" styleClass="hidelink" id="hidelink2"/>
+                                                                                        <rich:componentControl for="panel2" attachTo="hidelink2" operation="hide" event="onclick"/>
+                                                                                    </h:panelGroup>
+                                                                                </f:facet>
+                                                                                <img src="../images/tabela_tarifa02.PNG" width="325" height="325" alt="tebala_tarifa" style="vertical-align:middle"/>
+                                                                                <br/>
+                                                                                <br/>
+                                                                                <h:graphicImage value="/images/botao_voltar.gif" id="hidelink222" style="float:left;"/>
+                                                                                <rich:componentControl for="panel2" attachTo="hidelink222" operation="hide" event="onclick"/>
+                                                                                <rich:spacer />
+                                                                                <a href="login.faces">
+                                                                                    <h:graphicImage value="/images/botao_reserva.png" style="float:right;"/>
+                                                                                </a>
+                                                                            </rich:modalPanel>
+                                                                            <h:outputLink value="#" id="link2">
+                                                                                <h:graphicImage value="/images/botao_tarifa.png" styleClass="hidelink" id="hidelink22"/>
+                                                                                <rich:componentControl for="panel2" attachTo="link2" operation="show" event="onclick"/>
+                                                                            </h:outputLink>
+                                                                        </h:panelGroup>
+                                                                    </rich:column>
+                                                                    <rich:column rowspan="2">
+                                                                        <rich:spacer />
+                                                                        <h:panelGroup id="picture3">
+                                                                            <h:graphicImage value="/images/hotel_jiashan.jpg" id="pic3" style="border : 5px solid #E4EAEF"/>
+                                                                            <br/>
+                                                                            <rich:modalPanel id="panel3" width="350" height="440">
+                                                                                <f:facet name="header">
+                                                                                    <h:panelGroup>
+                                                                                        <h:outputText value="Hotel Nacional"></h:outputText>
+                                                                                    </h:panelGroup>
+                                                                                </f:facet>
+                                                                                <f:facet name="controls">
+                                                                                    <h:panelGroup>
+                                                                                        <h:graphicImage value="/images/botao_fechar.png" styleClass="hidelink" id="hidelink3"/>
+                                                                                        <rich:componentControl for="panel3" attachTo="hidelink3" operation="hide" event="onclick"/>
+                                                                                    </h:panelGroup>
+                                                                                </f:facet>
+                                                                                <img src="../images/tabela_tarifa03.PNG" width="325" height="325" alt="tebala_tarifa" style="vertical-align:middle"/>
+                                                                                <br/>
+                                                                                <br/>
+                                                                                <h:graphicImage value="/images/botao_voltar.gif" id="hidelink333" style="float:left;"/>
+                                                                                <rich:componentControl for="panel3" attachTo="hidelink333" operation="hide" event="onclick"/>
+                                                                                <rich:spacer />
+                                                                                <a href="login.faces">
+                                                                                    <h:graphicImage value="/images/botao_reserva.png" style="float:right;"/>
+                                                                                </a>
+                                                                            </rich:modalPanel>
+                                                                            <h:outputLink value="#" id="link3">
+                                                                                <h:graphicImage value="/images/botao_tarifa.png" styleClass="hidelink" id="hidelink33"/>
+                                                                                <rich:componentControl for="panel3" attachTo="link3" operation="show" event="onclick"/>
+                                                                            </h:outputLink>
+                                                                        </h:panelGroup>
+                                                                    </rich:column>                                                                    
+                                                                </rich:columnGroup>                                                                
+                                                            </f:facet>
+                                                        </rich:dataTable>                                                        
+                                                        <rich:dataTable
+                                                            onRowMouseOver="this.style.backgroundColor='#F1F1F1'"
+                                                            onRowMouseOut="this.style.backgroundColor='#{a4jSkin.tableBackgroundColor}'"
+                                                            cellpadding="0" cellspacing="0"
+                                                            width="475" border="0" var="record" value="">
+
+                                                            <f:facet name="header">
+                                                                <rich:columnGroup>
+                                                                    <rich:column rowspan="2">
+                                                                        <rich:spacer />
+                                                                        <h:panelGroup id="picture1">
+                                                                            <h:graphicImage value="/images/hotel_clarion.jpg" id="pic1" style="border : 5px solid #E4EAEF"/>
+                                                                            <br/>
+                                                                            <rich:modalPanel id="panel1" width="350" height="440">
+                                                                                <f:facet name="header">
+                                                                                    <h:panelGroup>
+                                                                                        <h:outputText value="Hotel Nacional"></h:outputText>
+                                                                                    </h:panelGroup>
+                                                                                </f:facet>
+                                                                                <f:facet name="controls">
+                                                                                    <h:panelGroup>
+                                                                                        <h:graphicImage value="/images/botao_fechar.png" styleClass="hidelink" id="hidelink1"/>
+                                                                                        <rich:componentControl for="panel1" attachTo="hidelink1" operation="hide" event="onclick"/>
+                                                                                    </h:panelGroup>
+                                                                                </f:facet>
+                                                                                <img src="../images/tabela_tarifa11.PNG" width="325" height="325" alt="tebala_tarifa" style="vertical-align:middle"/>
+                                                                                <br/>
+                                                                                <br/>
+                                                                                <h:graphicImage value="/images/botao_voltar.gif" id="hidelink111" style="float:left;"/>
+                                                                                <rich:componentControl for="panel1" attachTo="hidelink111" operation="hide" event="onclick"/>
+                                                                                <rich:spacer />
+                                                                                <a href="login.faces">
+                                                                                    <h:graphicImage value="/images/botao_reserva.png" style="float:right;"/>
+                                                                                </a>
+                                                                            </rich:modalPanel>
+                                                                            <h:outputLink value="#" id="link1">
+                                                                                <h:graphicImage value="/images/botao_tarifa.png" styleClass="hidelink" id="hidelink11"/>
+                                                                                <rich:componentControl for="panel1" attachTo="link1" operation="show" event="onclick"/>
+                                                                            </h:outputLink>
+                                                                        </h:panelGroup>
+                                                                    </rich:column>
+                                                                    <rich:column rowspan="2">
+                                                                        <rich:spacer />
+                                                                        <h:panelGroup id="picture2">
+                                                                            <h:graphicImage value="/images/hotel_hilton.gif" id="pic2" style="border : 5px solid #E4EAEF"/>
+                                                                            <br/>
+                                                                            <rich:modalPanel id="panel2" width="350" height="440">
+                                                                                <f:facet name="header">
+                                                                                    <h:panelGroup>
+                                                                                        <h:outputText value="Hotel Nacional"></h:outputText>
+                                                                                    </h:panelGroup>
+                                                                                </f:facet>
+                                                                                <f:facet name="controls">
+                                                                                    <h:panelGroup>
+                                                                                        <h:graphicImage value="/images/botao_fechar.png" styleClass="hidelink" id="hidelink2"/>
+                                                                                        <rich:componentControl for="panel2" attachTo="hidelink2" operation="hide" event="onclick"/>
+                                                                                    </h:panelGroup>
+                                                                                </f:facet>
+                                                                                <img src="../images/tabela_tarifa12.PNG" width="325" height="325" alt="tebala_tarifa" style="vertical-align:middle"/>
+                                                                                <br/>
+                                                                                <br/>
+                                                                                <h:graphicImage value="/images/botao_voltar.gif" id="hidelink222" style="float:left;"/>
+                                                                                <rich:componentControl for="panel2" attachTo="hidelink222" operation="hide" event="onclick"/>
+                                                                                <rich:spacer />
+                                                                                <a href="login.faces">
+                                                                                    <h:graphicImage value="/images/botao_reserva.png" style="float:right;"/>
+                                                                                </a>
+                                                                            </rich:modalPanel>
+                                                                            <h:outputLink value="#" id="link2">
+                                                                                <h:graphicImage value="/images/botao_tarifa.png" styleClass="hidelink" id="hidelink22"/>
+                                                                                <rich:componentControl for="panel2" attachTo="link2" operation="show" event="onclick"/>
+                                                                            </h:outputLink>
+                                                                        </h:panelGroup>
+                                                                    </rich:column>
+                                                                    <rich:column rowspan="2">
+                                                                        <rich:spacer />
+                                                                        <h:panelGroup id="picture3">
+                                                                            <h:graphicImage value="/images/hotel_queen.png" id="pic3" style="border : 5px solid #E4EAEF"/>
+                                                                            <br/>
+                                                                            <rich:modalPanel id="panel3" width="350" height="440">
+                                                                                <f:facet name="header">
+                                                                                    <h:panelGroup>
+                                                                                        <h:outputText value="Hotel Nacional"></h:outputText>
+                                                                                    </h:panelGroup>
+                                                                                </f:facet>
+                                                                                <f:facet name="controls">
+                                                                                    <h:panelGroup>
+                                                                                        <h:graphicImage value="/images/botao_fechar.png" styleClass="hidelink" id="hidelink3"/>
+                                                                                        <rich:componentControl for="panel3" attachTo="hidelink3" operation="hide" event="onclick"/>
+                                                                                    </h:panelGroup>
+                                                                                </f:facet>
+                                                                                <img src="../images/tabela_tarifa13.PNG" width="325" height="325" alt="tebala_tarifa" style="vertical-align:middle"/>
+                                                                                <br/>
+                                                                                <br/>
+                                                                                <h:graphicImage value="/images/botao_voltar.gif" id="hidelink333" style="float:left;"/>
+                                                                                <rich:componentControl for="panel3" attachTo="hidelink333" operation="hide" event="onclick"/>
+                                                                                <rich:spacer />
+                                                                                <a href="login.faces">
+                                                                                    <h:graphicImage value="/images/botao_reserva.png" style="float:right;"/>
+                                                                                </a>
+                                                                            </rich:modalPanel>
+                                                                            <h:outputLink value="#" id="link3">
+                                                                                <h:graphicImage value="/images/botao_tarifa.png" styleClass="hidelink" id="hidelink33"/>
+                                                                                <rich:componentControl for="panel3" attachTo="link3" operation="show" event="onclick"/>
+                                                                            </h:outputLink>
+                                                                        </h:panelGroup>
+                                                                    </rich:column>
+                                                                </rich:columnGroup>
+                                                            </f:facet>
+                                                        </rich:dataTable>
+                                                </div>
+                                        </div>
+                                </div>
+        <!-- / content -->
+        <!-- rightbar -->
+                                <div id="rightbar" class="sidebar">
+                                        <h2>univali</h2>
+                                        <div class="back" align="center">
+                                                <a href="http://www.univali.br/"><input name="logo_univali" type="image" src="../images/univali_logo.gif" /></a>
+                                        </div>
+                                        <div class="bottom_small"></div>
+                                        <h2>Calendar</h2>
+                                        <div class="back" align="center">
+                                                <div id="calendar1">
+                                                        <table id="calendar2" summary="Calendar">
+                                                                <caption>January 2008</caption>
+                                                                <thead>
+                                                                        <tr><th abbr="Monday" scope="col" title="Monday">M</th><th abbr="Tuesday" scope="col" title="Tuesday">T</th><th abbr="Wednesday" scope="col" title="Wednesday">W</th><th abbr="Thursday" scope="col" title="Thursday">T</th><th abbr="Friday" scope="col" title="Friday">F</th><th abbr="Saturday" scope="col" title="Saturday">S</th><th abbr="Sunday" scope="col" title="Sunday">S</th></tr>
+                                                                </thead>
+                                                                <tfoot>
+                                                                        <tr><td abbr="Des" colspan="3" id="prev"><a href="#">&laquo; Des</a></td><td class="pad">&nbsp;</td><td abbr="Feb" colspan="3" id="next" class="pad"><a href="#">Feb &raquo;</a></td></tr>
+                                                                </tfoot>
+                                                                <tbody>
+                                                                        <tr><td colspan="2" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+                                                                        <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+                                                                        <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+                                                                        <tr><td>20</td><td id="now">21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+                                                                        <tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td class="pad" colspan="2">&nbsp;</td></tr>
+                                                                </tbody>
+                                                        </table>
+                                                </div>
+                                        </div>
+                                        <div class="bottom_small"></div>
+                                </div>
+        <!-- / rightbar -->
+                                <div style="clear:both"></div>
+                        </div>
+        <!-- / page -->
+                </div>
+                <div id="footer">
+                        <div class="fleft"><p>Copyright statement.</p></div>
+                        <div class="fright"><p>More <a href="http://www.websitetemplatesonline.com" title="WTO - website templates and Flash templates">Free Website Templates</a> at WTO</p></div><div class="fclear"></div>
+                        <p>Design by <a href="http://www.metamorphozis.com/" title="Free Web Templates">Free Web Templates</a></p>
+                </div>
+        </div>
+    </h:form>
+</body>
+</html>

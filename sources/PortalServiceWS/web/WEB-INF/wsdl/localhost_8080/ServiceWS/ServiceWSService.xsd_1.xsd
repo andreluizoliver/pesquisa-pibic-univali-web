@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.1-hudson-28-. --><xs:schema xmlns:tns="http://ws.service.stcfed.rnp.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.service.stcfed.rnp.br/">
+
+<xs:element name="consultarPorIdAcomodacao" type="tns:consultarPorIdAcomodacao" />
+
+<xs:element name="consultarPorIdAcomodacaoResponse" type="tns:consultarPorIdAcomodacaoResponse" />
+
+<xs:element name="consultarPorIdReserva" type="tns:consultarPorIdReserva" />
+
+<xs:element name="consultarPorIdReservaResponse" type="tns:consultarPorIdReservaResponse" />
+
+<xs:element name="consultarPorNomeAcomodacao" type="tns:consultarPorNomeAcomodacao" />
+
+<xs:element name="consultarPorNomeAcomodacaoResponse" type="tns:consultarPorNomeAcomodacaoResponse" />
+
+<xs:element name="consultarPorNomeReserva" type="tns:consultarPorNomeReserva" />
+
+<xs:element name="consultarPorNomeReservaResponse" type="tns:consultarPorNomeReservaResponse" />
+
+<xs:element name="deletarAcomodacao" type="tns:deletarAcomodacao" />
+
+<xs:element name="deletarAcomodacaoResponse" type="tns:deletarAcomodacaoResponse" />
+
+<xs:element name="deletarReserva" type="tns:deletarReserva" />
+
+<xs:element name="deletarReservaResponse" type="tns:deletarReservaResponse" />
+
+<xs:element name="editarAcomodacao" type="tns:editarAcomodacao" />
+
+<xs:element name="editarAcomodacaoResponse" type="tns:editarAcomodacaoResponse" />
+
+<xs:element name="editarReserva" type="tns:editarReserva" />
+
+<xs:element name="editarReservaResponse" type="tns:editarReservaResponse" />
+
+<xs:element name="inserirAcomodacao" type="tns:inserirAcomodacao" />
+
+<xs:element name="inserirAcomodacaoResponse" type="tns:inserirAcomodacaoResponse" />
+
+<xs:element name="inserirReserva" type="tns:inserirReserva" />
+
+<xs:element name="inserirReservaResponse" type="tns:inserirReservaResponse" />
+
+<xs:element name="olaAcomodacao" type="tns:olaAcomodacao" />
+
+<xs:element name="olaAcomodacaoResponse" type="tns:olaAcomodacaoResponse" />
+
+<xs:element name="olaReserva" type="tns:olaReserva" />
+
+<xs:element name="olaReservaResponse" type="tns:olaReservaResponse" />
+
+<xs:element name="selectAllAcomodacao" type="tns:selectAllAcomodacao" />
+
+<xs:element name="selectAllAcomodacaoResponse" type="tns:selectAllAcomodacaoResponse" />
+
+<xs:element name="selectAllReserva" type="tns:selectAllReserva" />
+
+<xs:element name="selectAllReservaResponse" type="tns:selectAllReservaResponse" />
+
+<xs:complexType name="consultarPorIdReserva">
+<xs:sequence>
+<xs:element name="id" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarPorIdReservaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:reservaBean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="reservaBean">
+<xs:sequence>
+<xs:element name="acomodacao" type="tns:acomodacaoBean" minOccurs="0" />
+<xs:element name="crianca" type="xs:string" minOccurs="0" />
+<xs:element name="dtEntrada" type="xs:string" minOccurs="0" />
+<xs:element name="dtSaida" type="xs:string" minOccurs="0" />
+<xs:element name="email" type="xs:string" minOccurs="0" />
+<xs:element name="idReserva" type="xs:int" />
+<xs:element name="nome" type="xs:string" minOccurs="0" />
+<xs:element name="nrPessoas" type="xs:int" />
+<xs:element name="obs" type="xs:string" minOccurs="0" />
+<xs:element name="telefone" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="acomodacaoBean">
+<xs:sequence>
+<xs:element name="descricao" type="xs:string" minOccurs="0" />
+<xs:element name="idAcomodacao" type="xs:int" />
+<xs:element name="lvArcondicionado" type="xs:string" minOccurs="0" />
+<xs:element name="lvCafe" type="xs:string" minOccurs="0" />
+<xs:element name="lvCozinha" type="xs:string" minOccurs="0" />
+<xs:element name="lvHidro" type="xs:string" minOccurs="0" />
+<xs:element name="lvKitpraia" type="xs:string" minOccurs="0" />
+<xs:element name="lvSacada" type="xs:string" minOccurs="0" />
+<xs:element name="lvSauna" type="xs:string" minOccurs="0" />
+<xs:element name="lvTv" type="xs:string" minOccurs="0" />
+<xs:element name="nmAcomodacao" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editarAcomodacao">
+<xs:sequence>
+<xs:element name="reserva" type="tns:acomodacaoBean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editarAcomodacaoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarPorNomeAcomodacao">
+<xs:sequence>
+<xs:element name="nome" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarPorNomeAcomodacaoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:acomodacaoBean" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deletarAcomodacao">
+<xs:sequence>
+<xs:element name="idAcomodacao" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deletarAcomodacaoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarPorIdAcomodacao">
+<xs:sequence>
+<xs:element name="id" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarPorIdAcomodacaoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:acomodacaoBean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deletarReserva">
+<xs:sequence>
+<xs:element name="id" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deletarReservaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="inserirReserva">
+<xs:sequence>
+<xs:element name="reserva" type="tns:reservaBean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="inserirReservaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editarReserva">
+<xs:sequence>
+<xs:element name="reserva" type="tns:reservaBean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editarReservaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="inserirAcomodacao">
+<xs:sequence>
+<xs:element name="reserva" type="tns:acomodacaoBean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="inserirAcomodacaoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="olaAcomodacao">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="olaAcomodacaoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="olaReserva">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="olaReservaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarPorNomeReserva">
+<xs:sequence>
+<xs:element name="nome" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarPorNomeReservaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:reservaBean" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="selectAllAcomodacao">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="selectAllAcomodacaoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:acomodacaoBean" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="selectAllReserva">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="selectAllReservaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:reservaBean" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
